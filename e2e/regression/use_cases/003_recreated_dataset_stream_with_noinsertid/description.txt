@@ -1,6 +1,8 @@
-Streaming control test showing the test data (5 x 1000 rows) can be loaded with stream API,
-but it requires min X time (once 90 sec was enough for couple of runs, but later it need more),
+This use case recreate the whole dataset, and then run SQL script to create a table, and stream data with no insertID
 
-I've seen more data occasionally I guess due to internalError and retries
+I've seen that in order to get data stream after dataset is recreated it requires some wait time before dataset is recreated to see subsequent data streamed visible.
+(I was able to run it once 90 sec was enough for couple of runs, but later it needed much more),
+After recreating dataset all, more or partial or no data is observed
 
-After recreating dataset partial data is present if wait time before recreating was less than 90 sec
+Once I've seen more data I guess it could be due to internalError and retries
+

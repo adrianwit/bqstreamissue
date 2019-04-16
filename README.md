@@ -32,9 +32,7 @@ endly
 
 4) Run specific tests
 
-endly -t=test -i=load_data
-
-a) [recreated_dataset_stream_with_insertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/001_load_data/description.txt)
+a) [load_data](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/001_load_data/description.txt)
 
 ```endly -t=test -i=load_data```
 

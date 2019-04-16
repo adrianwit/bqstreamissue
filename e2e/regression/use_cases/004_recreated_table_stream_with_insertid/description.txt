@@ -1,5 +1,6 @@
-Streaming control test showing the test data (5 x 1000 rows) can be loaded with stream API,
-after recreating table only (no dataset) (CREATE OR REPLACE) inserted data is reported as 0 when queried,
-no error is reported
+This use case recreate ont table (recreate=false) via SQL script, and stream data with insertID
 
+I've seen that in order to get data stream after dataset is recreated it requires some wait time before dataset is recreated to see subsequent data streamed visible.
+(I was able to run it once with 11 minutes wait to see subsequent data streamed sucessfully)
 
+After recreating dataset all, partial or no data is observed
