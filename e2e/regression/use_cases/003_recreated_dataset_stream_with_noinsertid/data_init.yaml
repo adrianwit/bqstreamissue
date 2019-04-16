@@ -1,0 +1,24 @@
+pipeline:
+  db:
+    register:
+      action: dsunit:init
+      sleepTimeMs: 10000
+      datastore: db
+      expand: true
+      recreate: true
+      config:
+        driverName: bigquery
+        credentials: $bqCredentials
+        parameters:
+          datasetId: db
+          events_${eventSufix}.insertMethod: stream
+          insertWaitTimeoutInMs: -1
+      scripts:
+        - URL: datastore/db/schema.sql
+
+  prepare:
+    db:
+      action: dsunit:prepare
+      datastore: db
+      URL: datastore/db/data
+

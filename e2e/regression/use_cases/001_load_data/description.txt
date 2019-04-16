@@ -1,0 +1,1 @@
+Control test showing the test data (5 x 1000 rows) can be loaded efficiently with load API, no extra time after recreating dataset

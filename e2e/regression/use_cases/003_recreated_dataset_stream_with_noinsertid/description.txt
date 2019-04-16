@@ -1,0 +1,6 @@
+Streaming control test showing the test data (5 x 1000 rows) can be loaded with stream API,
+but it requires min X time (once 90 sec was enough for couple of runs, but later it need more),
+
+I've seen more data occasionally I guess due to internalError and retries
+
+After recreating dataset partial data is present if wait time before recreating was less than 90 sec

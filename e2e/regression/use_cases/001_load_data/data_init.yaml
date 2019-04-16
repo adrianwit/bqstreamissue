@@ -1,0 +1,21 @@
+pipeline:
+  db:
+    register:
+      action: dsunit:init
+      datastore: db
+      expand: true
+      recreate: true
+      config:
+        driverName: bigquery
+        credentials: $bqCredentials
+        parameters:
+          datasetId: db
+      scripts:
+        - URL: datastore/db/schema.sql
+
+  prepare:
+    db:
+      action: dsunit:prepare
+      datastore: db
+      URL: datastore/db/data
+

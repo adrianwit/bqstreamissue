@@ -1,0 +1,5 @@
+init:
+  _: ${generator.reset}
+pipeline:
+  reset:
+    action: nop

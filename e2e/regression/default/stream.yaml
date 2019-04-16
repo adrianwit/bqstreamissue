@@ -1,0 +1,10 @@
+init:
+  path: ${parentPath}
+pipeline:
+  stream:
+    action: dsunit:prepare
+    logging: false
+    repeat: 5
+    async: true
+    request: '@${path}/prepare'
+    db: db

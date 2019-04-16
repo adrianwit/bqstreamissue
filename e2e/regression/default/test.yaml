@@ -1,0 +1,55 @@
+init:
+  self.i: 1
+  repeat: 2
+  path: $path
+pipeline:
+  db-init:
+    action: run
+    comments: recreate dataset
+    request: '@${path}/data_init'
+
+  loop:
+    multiAction: true
+    reset:
+      action: run
+      init:
+        i: $self.i
+      request: '@reset'
+      comments: reset seq generator
+
+
+    stream:
+      action: run
+      request: '@stream'
+      comments: '[${i}] streaming/loading data async ...'
+      parentPath: $parent.path
+
+
+    db-validate:
+      action: dsunit:query
+      datastore: db
+      sql: SELECT COUNT(1) cnt FROM db.events_${eventSufix}
+      expect:
+        - cnt: 5000
+
+    increment:
+      action: nop
+      init:
+        _: $self.i++
+
+    recreateWaitTime:
+      action: nop
+      when: $self.i <= $repeat
+      sleepTimeMs: $recreateWaitTime
+      description: 'wait ${recreateWaitTime} ms before recreating tables'
+
+    db-recreate:
+      action: run
+      when: $self.i <= $repeat
+      comments: recreate dataset
+      request: '@${path}/data_init'
+
+    goto:
+      when: $self.i <= $repeat
+      action: goto
+      task: loop

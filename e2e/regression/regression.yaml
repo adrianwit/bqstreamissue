@@ -1,0 +1,22 @@
+init:
+  eventSufix: 100
+pipeline:
+  test:
+    tag: $pathMatch
+    description: '@use_case'
+    subPath: 'use_cases/${index}_*'
+    range: 1..004
+    template:
+      init:
+        action: nop
+        init:
+          recreateWaitTime: $Cat(${path}/recreateWaitTime.txt)
+      test:
+        action: run
+        request: '@test'
+        path: $path
+      inc:
+        action: nop
+        comments: update table suffix
+        init:
+          _: ${eventSufix++}

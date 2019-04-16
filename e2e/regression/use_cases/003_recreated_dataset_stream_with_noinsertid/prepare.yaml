@@ -1,0 +1,4 @@
+action: dsunit:prepare
+datastore: $db
+URL: ${path}/prepare/$db
+expand: true

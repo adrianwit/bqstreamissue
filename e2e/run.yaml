@@ -1,0 +1,7 @@
+init:
+  bqCredentials: gcp-e2e
+pipeline:
+  test:
+    action: run
+    request: '@regression/regression'
+    tasks: '*'
