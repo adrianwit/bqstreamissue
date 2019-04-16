@@ -23,5 +23,38 @@ Name google JOSN secret as ~/.secret/gcp-e2e.json
 ```bash
 cd /e2e
 git clone https://github.com/adrianwit/bqstreamissue
+cd bqstreamissue/e2e
 
+## to run all test run
+endly
 ``` 
+
+
+4) Run specific tests
+
+endly -t=test -i=load_data
+
+a) [recreated_dataset_stream_with_insertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/001_load_data/description.txt)
+
+```endly -t=test -i=load_data```
+
+
+b) [recreated_dataset_stream_with_insertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/002_recreated_dataset_stream_with_insertid/description.txt)
+
+```endly -t=test -i=recreated_dataset_stream_with_insertid```
+
+
+c) [recreated_dataset_stream_with_insertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/003_recreated_dataset_stream_with_noinsertid/description.txt)
+
+```endly -t=test -i=recreated_dataset_stream_with_noinsertid```
+
+d) [recreated_dataset_stream_with_insertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/004_recreated_table_stream_with_insertid/description.txt)
+
+```endly -t=test -i=recreated_table_stream_with_insertid```
+
+
+###### Big Query Driver Configuration
+
+To control BigQuery insert behaviour check [Driver Configuration](https://github.com/viant/bgc)
+
+
