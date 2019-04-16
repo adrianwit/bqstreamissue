@@ -42,11 +42,11 @@ b) [recreated_dataset_stream_with_insertid](https://github.com/adrianwit/bqstrea
 ```endly -t=test -i=recreated_dataset_stream_with_insertid```
 
 
-c) [recreated_dataset_stream_with_insertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/003_recreated_dataset_stream_with_noinsertid/description.txt)
+c) [recreated_dataset_stream_with_noinsertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/003_recreated_dataset_stream_with_noinsertid/description.txt)
 
 ```endly -t=test -i=recreated_dataset_stream_with_noinsertid```
 
-d) [recreated_dataset_stream_with_insertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/004_recreated_table_stream_with_insertid/description.txt)
+d) [recreated_table_stream_with_insertid](https://github.com/adrianwit/bqstreamissue/blob/master/e2e/regression/use_cases/004_recreated_table_stream_with_insertid/description.txt)
 
 ```endly -t=test -i=recreated_table_stream_with_insertid```
 
