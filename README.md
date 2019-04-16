@@ -53,6 +53,6 @@ d) [recreated_table_stream_with_insertid](https://github.com/adrianwit/bqstreami
 
 ###### Big Query Driver Configuration
 
-To control BigQuery insert behaviour check [Driver Configuration](https://github.com/viant/bgc)
+To control BigQuery insert behaviour check [Driver Configuration](https://github.com/viant/bgc#configuration-parameters)
 
 
